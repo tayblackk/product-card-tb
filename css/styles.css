@@ -1,0 +1,192 @@
+/* [********************************] */
+/* Variables */
+/* [********************************] */
+
+
+:root {
+    /* Primary */
+    --color-dark-cyan: hsl(158, 36%, 37%);
+    --color-darker-cyan: hsl(158, 36%, 25%);
+    --color-cream: hsl(30, 38%, 92%);
+    /* Neutral */
+    --color-dark-blue: hsl(212, 21%, 14%);
+    --color-dark-grayish-blue: hsl(228, 12%, 48%);
+    --color-white: hsl(0, 0%, 100%);
+
+    /* font-weight */
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    /* font-families */
+    --ff-accent: 'Fraunces', serif;
+    --ff-primary: 'Montserrat', sans-serif;
+}
+/* ************************************ */
+
+
+/* Box-sizing */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+/* Removing default margins */
+* {
+    margin: 0;
+}
+
+/* allowing for percentage-based heights */
+html,
+body {
+    height: 100%;
+}
+/* typography scuffs - line-height - improved text rendering */
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+    line-height: 1.0;
+}
+/* text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+/* media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+/* Removing built-in Typography*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* [********************************] */
+/* Styling*/
+/* [********************************] */
+
+body {
+    background: var(--color-cream);
+    color: var(--color-dark-grayish-blue);
+    font-family:var(--ff-primary);
+    font-weight: var(--fw-regular);
+    font-size: .875rem;
+    /* for chanel pro only */
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    margin: 1rem;
+}
+/* utilities */
+.only__flex{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+/* preview styles */
+.preview {
+    --content-padding: 1.5rem;
+    --content-spacing: 1rem;
+
+
+    display: grid;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+@media (min-width: 575px) {
+    .preview {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.preview__content {
+    padding: var(--content-padding);
+    display: grid;
+    gap: 1rem;
+}
+
+.preview__category {
+    font-size: 0.8125;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+#product__title {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: black;
+}
+
+.preview__price {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--color-dark-cyan);
+}
+
+/* button */
+.btn {
+    cursor: pointer;
+    text-decoration: none;
+    /* display: inline-flex; */
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: .5em 1.5em;
+    background-color: var(--color-dark-cyan);
+    color: var(--color-white);
+    font-weight: var(--fw-bold);
+    font-size: 0.9;
+}
+
+/* Having trouble adding the .svg - Really not even sure what is going on - Probably too tired */
+/* .btn[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url("images/icon-cart.svg");
+    background-color: #fff;
+    width: 15px;
+    height: 16px;
+} */
+
+.btn:is(:hover, :focus) {
+    background-color: var(--color-darker-cyan);             
+}
+
+
+
+
